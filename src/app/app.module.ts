@@ -22,29 +22,28 @@ import { QuoteService } from './common';
 
 @NgModule({
 
-    imports: [HttpModule,
-            JsonpModule,
-            BrowserModule,
-            FormsModule,
-            TypeaheadModule],
+    imports: [  HttpModule,
+                JsonpModule,
+                BrowserModule,
+                FormsModule,
+                TypeaheadModule ],
 
-     declarations: [AppComponent,
-        NavbarComponent,
-        WatchlistsComponent,
-        WatchlistComponent,
-        DashboardComponent,
-        FPChartComponent,
-        TopstocksComponent,
-        CHART_DIRECTIVES,
-        SignDirective,
-        FilterArrPipe        
-        ],
+  declarations: [ CHART_DIRECTIVES,
+                SignDirective,
+                FilterArrPipe,
+                NavbarComponent,
+                FPChartComponent,
+                TopstocksComponent,
+                DashboardComponent,
+                WatchlistsComponent,
+                WatchlistComponent,     
+                AppComponent ],  
 
-    providers: [WatchlistService,
-        QuoteService,
-        FilterArrPipe],
+    providers: [FilterArrPipe, 
+                QuoteService,
+                WatchlistService],
 
-     bootstrap: [AppComponent]
+    bootstrap: [AppComponent, ]
  })
 
 export class AppModule { }
