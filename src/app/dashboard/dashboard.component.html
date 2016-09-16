@@ -41,7 +41,7 @@
 				<div class="chart-title">
 					<h5><strong> Net P/L by Watchlist </strong> </h5>
 				</div>
-				<div class="panel panel-default chart-panel">				
+				<div class="panel panel-default chart-panel">
 					<fp-chart #pnlChart [config]="optionsPnLChart"></fp-chart>
 				</div>
 			</div>
@@ -60,31 +60,55 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="chart-title">
-					<h5><strong> Top Stocks by Market Value </strong> </h5>
+					<h5><strong> Stocks by Market Value </strong> </h5>
+					&emsp;&emsp;
+					<select [(ngModel)]="stkorderMV">
+							<option value="top">Top</option>
+							<option value="bottom">Bottom</option>
+						</select>
+					<select [(ngModel)]="stksizeMV">
+							<option *ngFor="let n of [5,10,15,20]" [value]="n">{{ n }}</option>
+						</select>
 				</div>
-				<div class="panel panel-default">					
+				<div class="panel panel-default">
 					<fp-topstocks #topMV [stocks]="allStocks" title="Market Value ($)" [orderBy]="'marketValue'"
-							sortOrder="dsc">
+							[sliceMode]="stkorderMV" [numItems]="stksizeMV">
 					</fp-topstocks>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="chart-title">
-					<h5><strong> Top Stocks by Net P/L </strong> </h5>
+					<h5><strong> Stocks by Net P/L </strong> </h5>
+					&emsp;&emsp;
+					<select [(ngModel)]="stkorderPL">
+							<option value="top">Top</option>
+							<option value="bottom">Bottom</option>
+						</select>
+					<select [(ngModel)]="stksizePL">
+							<option *ngFor="let n of [5,10,15,20]" [value]="n">{{ n }}</option>
+						</select>
 				</div>
 				<div class="panel panel-default">
 					<fp-topstocks #topPL [stocks]="allStocks" title="Net P/L ($)" [orderBy]="'netPnL'"
-							sortOrder="dsc">
+							[sliceMode]="stkorderPL" [numItems]="stksizePL">
 					</fp-topstocks>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="chart-title">
-					<h5><strong> Top Stocks by Day Change </strong> </h5>
+					<h5><strong> Stocks by Day Change </strong> </h5>
+					&emsp;&emsp;
+					<select [(ngModel)]="stkorderDC">
+							<option value="top">Top</option>
+							<option value="bottom">Bottom</option>
+						</select>
+					<select [(ngModel)]="stksizeDC">
+							<option *ngFor="let n of [5,10,15,20]" [value]="n">{{ n }}</option>
+						</select>
 				</div>
-				<div class="panel panel-default">	
+				<div class="panel panel-default">
 					<fp-topstocks #topDC [stocks]="allStocks" title="Day Change ($)" [orderBy]="'dayChange'"
-							sortOrder="dsc">
+							[sliceMode]="stkorderDC" [numItems]="stksizeDC">
 					</fp-topstocks>
 				</div>
 			</div>

@@ -19,25 +19,30 @@ export class TopstocksComponent implements OnChanges {
     @Input('stocks') allStocks: Map<string, WatchlistItem[]>;
     @Input() title;
     @Input() orderBy;
-    @Input() numRequired;
-    @Input() sortOrder;
+    @Input() numItems;
+    @Input() sliceMode;
 
-    topStocks: Object[] = [];
+    filteredStocks: Object[] = [];
 
-    constructor(private filterList: FilterArrPipe) { } 
+    constructor(private filterListPipe: FilterArrPipe) { } 
 
     ngOnChanges() {
-        this.topStocks = this.filterList.transform(this.getFlatList(), this.orderBy, this.numRequired, this.sortOrder);
+        this.filteredStocks = this.filterListPipe.transform(this.getFlatList(), this.orderBy, this.numItems, this.sliceMode);
+        
+        if (this.sliceMode === 'bottom') {
+            this.filteredStocks.reverse();
+        }
     }
 
     getFlatList(): Object[] {
+        // aggregate the values for the same stock and create a flat list
         let flatList = [];
         this.allStocks.forEach((stocks, key) => {
             let [instrument, exchange] = key.split(':');
             let value = 0;
             stocks.forEach(stock => value += stock[this.orderBy]);
             flatList.push({ instrument, exchange, [this.orderBy]: value });
-        })
+        });
         return flatList;
     }
 }

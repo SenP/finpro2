@@ -4,7 +4,7 @@
 		<!--Side bar-->
 		<div class="col-md-3 side-bar">
 			<!--button for dashboard view-->
-			<div>
+			<div *ngIf="selectedWatchlist">
 				<button class="btn btn-success center-block" (click)="wl.onChangeSelection(null)">
                       View Dashboard
                 </button>

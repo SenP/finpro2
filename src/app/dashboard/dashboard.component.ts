@@ -50,7 +50,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     // All stocks
     allStocks: Map<string, WatchlistItem[]>;
-
+    stkorderMV: string = 'top';
+    stksizeMV: number = 5;
+    stkorderPL: string = 'top';
+    stksizePL: number = 5;
+    stkorderDC: string = 'top';
+    stksizeDC: number = 5;
+    
     constructor(private watchlistService: WatchlistService,
         private quoteService: QuoteService) { }
 
@@ -109,7 +115,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         //update allstocks list
         this.allStocks = stocks;
     }
-
+    
     // compute initial chart values
     initChartData() {
         this.portfolioDaychange, this.portfolioPnL, this.portfolioValue = 0;
