@@ -6,9 +6,9 @@ Developed using Angular 2 RC6.
 
 Also uses the following:
 
-            * Google Finance API (for stock quotes)
-            * angular-cli
-            * angular2-highcharts
-            * ng2-bootstrap
-            * RxJS
-            * HTML5 Local Storage
+* Google Finance API (for stock quotes)
+* angular-cli
+* angular2-highcharts
+* ng2-bootstrap
+* RxJS
+* HTML5 Local Storage
