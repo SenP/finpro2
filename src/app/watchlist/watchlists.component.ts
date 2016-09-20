@@ -3,7 +3,7 @@ import { Watchlist, WatchlistService } from '../common';
 
 @Component({
     selector: 'fp-watchlists',
-    templateUrl: 'app/watchlist/watchlists.component.html',
+    templateUrl: './watchlists.component.html',
     styles: [`      
             .msg {
                     font-style: italic;

@@ -5,7 +5,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
 // Components
-import { AppComponent } from './index';
+import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar';
 import { WatchlistsComponent } from './watchlist';
 import { WatchlistComponent } from './watchlist';
@@ -43,7 +43,7 @@ import { QuoteService } from './common';
                 QuoteService,
                 WatchlistService],
 
-    bootstrap: [AppComponent, ]
+    bootstrap: [AppComponent]
  })
 
 export class AppModule { }

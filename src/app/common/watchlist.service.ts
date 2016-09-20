@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Watchlist, WatchlistItem, Quote, QuoteService } from './index';
+import { Quote } from './quote.model';
+import { WatchlistItem, Watchlist } from './watchlist.model';
+import { QuoteService } from './quote.service';
 
 @Injectable()
 

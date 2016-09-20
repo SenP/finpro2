@@ -1,10 +1,10 @@
-import { Finpro2Page } from './app.po';
+import { Finpro3Page } from './app.po';
 
-describe('finpro2 App', function() {
-  let page: Finpro2Page;
+describe('finpro3 App', function() {
+  let page: Finpro3Page;
 
   beforeEach(() => {
-    page = new Finpro2Page();
+    page = new Finpro3Page();
   });
 
   it('should display message saying app works', () => {

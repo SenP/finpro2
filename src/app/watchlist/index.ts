@@ -1,2 +1,3 @@
-export * from './watchlists.component';
 export * from './watchlist.component';
+export * from './watchlists.component';
+

@@ -3,7 +3,7 @@ import { Http, Jsonp, URLSearchParams } from '@angular/http';
 import { Observable, Subject, Subscription } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
-import { Quote } from './index';
+import { Quote } from './quote.model';
 
 @Injectable()
 

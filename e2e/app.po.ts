@@ -1,4 +1,6 @@
-export class Finpro2Page {
+import { browser, element, by } from 'protractor/globals';
+
+export class Finpro3Page {
   navigateTo() {
     return browser.get('/');
   }

@@ -3,7 +3,7 @@ import { WatchlistService, Watchlist, WatchlistItem, QuoteService } from '../com
 
 @Component({
     selector: 'fp-watchlist',
-    templateUrl: 'app/watchlist/watchlist.component.html',
+    templateUrl: './watchlist.component.html',
     styles: [`           
                 .number-field {
                     text-align: right

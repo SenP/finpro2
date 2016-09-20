@@ -5,7 +5,7 @@ import { FPChartComponent, TopstocksComponent } from './index';
 
 @Component({
     selector: 'fp-dashboard',
-    templateUrl: 'app/dashboard/dashboard.component.html',
+    templateUrl: './dashboard.component.html',
     styles: [`               
                 .chart-title {
                     background: lightgrey;

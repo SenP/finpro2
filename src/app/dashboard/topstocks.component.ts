@@ -3,7 +3,7 @@ import { WatchlistItem, FilterArrPipe } from '../common';
 
 @Component({
     selector: 'fp-topstocks',
-    templateUrl: 'app/dashboard/topstocks.component.html',
+    templateUrl: './topstocks.component.html',
     styles: [`
                 .number-field {
                     text-align: center
