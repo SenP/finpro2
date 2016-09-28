@@ -4,11 +4,8 @@ import { WatchlistItem, FilterArrPipe } from '../common';
 @Component({
     selector: 'fp-topstocks',
     templateUrl: './topstocks.component.html',
-    styles: [`
-                .number-field {
-                    text-align: center
-                }                
-                .topTable {
+    styles: [`                               
+                .stkTable {
                     background: white
                 }                
         `]

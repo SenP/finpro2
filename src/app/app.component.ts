@@ -44,8 +44,9 @@ export class AppComponent implements OnInit {
         this.selectedWatchlist = wl;
     }
 
-    onChangeTimer() {
+    onChangeTimer(val) {
         // Reset timer to new interval
+        this.refInterval = val;
         this.quoteService.resetTimer(this.refInterval * 1000);
     }
 }

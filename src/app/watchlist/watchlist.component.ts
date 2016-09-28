@@ -5,18 +5,9 @@ import { WatchlistService, Watchlist, WatchlistItem, QuoteService } from '../com
     selector: 'fp-watchlist',
     templateUrl: './watchlist.component.html',
     styles: [`           
-                .number-field {
-                    text-align: right
-                }
-
                 .panel-heading {
                     font-size: 2em;
-                }
-                .msg {
-                    font-style: italic;
-                    font-size: 1.2em;
-                    background: #ecf0f1;
-                }
+                }                
             `]
 })
 

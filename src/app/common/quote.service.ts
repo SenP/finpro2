@@ -111,7 +111,7 @@ export class QuoteService {
     getTickers() {
         if (this.tickers.length === 0) {
             this.http
-                .get("app/tickers-list.json")
+                .get("assets/tickers-list.json")
                 .map(response => response.json())
                 .subscribe(tickers => {
                     this.tickers = tickers;

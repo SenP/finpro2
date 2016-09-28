@@ -9,6 +9,7 @@ import { QuoteService } from './quote.service';
 export class WatchlistService {
 
   private watchlists: Array<Watchlist> = [];
+  private simDelay: number = 1000;
 
   constructor(private quoteService: QuoteService) { }
 
@@ -51,7 +52,7 @@ export class WatchlistService {
   saveWatchlist(wl): Promise<{ status: string; msg?: string; data?: Watchlist }> {
     let p = new Promise(resolve => setTimeout(() => {
       resolve(this.doSaveWatchlist(wl));
-    }, 2000));
+    }, this.simDelay));
 
     return p;
   }
@@ -88,7 +89,7 @@ export class WatchlistService {
   saveWatchlistItem(wlist, wlItem) {
     let p = new Promise(resolve => setTimeout(() => {
       resolve(this.doSaveWatchlistItem(wlist, wlItem));
-    }, 2000));
+    }, this.simDelay));
 
     return p;
   }
@@ -120,7 +121,7 @@ export class WatchlistService {
   deleteWatchlist(wlist: Watchlist) {
     let p = new Promise(resolve => setTimeout(() => {
       resolve(this.doRemoveWatchlist(wlist));
-    }, 2000));
+    }, this.simDelay));
 
     return p;
   }
@@ -147,7 +148,7 @@ export class WatchlistService {
   deleteWatchlistItem(wlist: Watchlist, wlItem: WatchlistItem) {
     let p = new Promise(resolve => setTimeout(() => {
       resolve(this.doRemoveWatchlistItem(wlist, wlItem));
-    }, 2000));
+    }, this.simDelay));
 
     return p;
   }
