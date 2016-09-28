@@ -62,17 +62,17 @@
 				<div class="chart-title">
 					<h5><strong> Stocks by Market Value </strong> </h5>
 					&emsp;&emsp;
-					<select [(ngModel)]="stkorderMV">
-							<option value="top">Top</option>
+					<select #stkorderMV>
+							<option value="top" selected>Top</option>
 							<option value="bottom">Bottom</option>
 						</select>
-					<select [(ngModel)]="stksizeMV">
+					<select #stksizeMV>
 							<option *ngFor="let n of [5,10,15,20]" [value]="n">{{ n }}</option>
 						</select>
 				</div>
 				<div class="panel panel-default">
 					<fp-topstocks #topMV [stocks]="allStocks" title="Market Value ($)" [orderBy]="'marketValue'"
-							[sliceMode]="stkorderMV" [numItems]="stksizeMV">
+							[sliceMode]="stkorderMV.value" [numItems]="stksizeMV.value">
 					</fp-topstocks>
 				</div>
 			</div>

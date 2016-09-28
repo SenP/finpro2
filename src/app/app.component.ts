@@ -4,7 +4,7 @@ import { Watchlist, WatchlistItem, WatchlistService, QuoteService, Quote } from 
 
 @Component({
     selector: 'finpro-app',
-    templateUrl: './app.component.html'    
+    templateUrl: './app.component.html'
 })
 
 export class AppComponent implements OnInit {
@@ -12,7 +12,10 @@ export class AppComponent implements OnInit {
     watchlists: Watchlist[] = [];
     selectedWatchlist: Watchlist;
     refInterval: number = 60;
-    refFreqs: number[] =  [10, 20, 30, 40, 50, 60];
+    refFreqs: [number, string][] = [
+        [10, '10 sec'], [30, '30 sec'], [60, '1 min'], [300, '5 min'], [600, '10 min'],
+        [900, '15 min'], [1200, '20 min'], [1800, '30 min'], [3600, '60 min']
+    ];
 
     constructor(private watchlistService: WatchlistService,
         private quoteService: QuoteService) { }
@@ -34,7 +37,7 @@ export class AppComponent implements OnInit {
             .subscribe(qmap => {
                 this.watchlistService.updateQuotes(qmap);
             });
-            
+
         // Load the supported tickers
         this.quoteService.getTickers();
     }

@@ -1,7 +1,7 @@
 <div class="table-responsive">
-	<table class="table table-bordered stkTable" *ngIf="filteredStocks?.length >	0">
+	<table class="table table-bordered stkTable" *ngIf="filteredStocks?.length > 0">
 		<thead>
-			<tr class="info">
+			<tr>
 				<th>Stock Code </th>
 				<th>Exchange </th>
 				<th class="number-field">{{ title }} </th>
@@ -12,7 +12,7 @@
 			<tr *ngFor="let stock of filteredStocks">
 				<td> {{ stock.instrument }} </td>
 				<td> {{ stock.exchange }} </td>
-				<td class="number-field"> {{ stock[orderBy] | number:'1.2-2' }} </td>
+				<td class="number-field" sign> {{ stock[orderBy] | number:'1.2-2' }} </td>
 			</tr>
 		</tbody>
 	</table>

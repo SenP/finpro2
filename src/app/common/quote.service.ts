@@ -66,6 +66,7 @@ export class QuoteService {
 
     // Refresh the quotes map with latest quotes from API
     refreshQuotes() {
+        
         if (this.quotesMap.size > 0) {
             let stockcodes = '';
 

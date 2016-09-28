@@ -31,6 +31,9 @@ export class WatchlistService {
         this.watchlists.push(newWL);
       });
     }
+    else {
+      this.getSampleWatchlists();
+    }
     return this.watchlists;
   }
 
@@ -166,4 +169,99 @@ export class WatchlistService {
     localStorage.setItem("fpwatchlists", JSON.stringify(this.watchlists));
     return { status: "success", data: wlItem };
   }
+  // if no watchlists created, load some sample watchlists
+  getSampleWatchlists() {
+    //1st
+    this.watchlists.push(Object.assign(new Watchlist(), {
+      id: 1,
+      name: 'Technology',
+      description: "technology stocks",
+      owner: 'sample',
+      instruments: []
+    }));
+
+    this.watchlists[0].instruments.push(Object.assign(new WatchlistItem(), {
+      instrument: 'GOOGL',
+      exchange: 'NASDAQ',
+      unitsOwned: 100,
+      avgPrice: 700
+    }));
+
+    this.watchlists[0].instruments.push(Object.assign(new WatchlistItem(), {
+      instrument: 'MSFT',
+      exchange: 'NASDAQ',
+      unitsOwned: 300,
+      avgPrice: 52
+    }));
+
+    this.watchlists[0].instruments.push(Object.assign(new WatchlistItem(), {
+      instrument: 'AMZN',
+      exchange: 'NASDAQ',
+      unitsOwned: 50,
+      avgPrice: 750
+    }));
+
+    this.watchlists[0].instruments.push(Object.assign(new WatchlistItem(), {
+      instrument: 'AAPL',
+      exchange: 'NASDAQ',
+      unitsOwned: 200,
+      avgPrice: 130
+    }));
+
+    //2nd
+    this.watchlists.push(Object.assign(new Watchlist(), {
+      id: 2,
+      name: 'Financials',
+      description: "Financial stocks",
+      owner: 'sample',
+      instruments: []
+    }));
+    this.watchlists[1].instruments.push(Object.assign(new WatchlistItem(), {
+      instrument: 'BAC',
+      exchange: 'NYSE',
+      unitsOwned: 500,
+      avgPrice: 13
+    }));
+    this.watchlists[1].instruments.push(Object.assign(new WatchlistItem(), {
+      instrument: 'WFC',
+      exchange: 'NYSE',
+      unitsOwned: 200,
+      avgPrice: 46
+    }));
+    this.watchlists[1].instruments.push(Object.assign(new WatchlistItem(), {
+      instrument: 'JPM',
+      exchange: 'NYSE',
+      unitsOwned: 400,
+      avgPrice: 60
+    }));
+
+    //3rd
+    this.watchlists.push(Object.assign(new Watchlist(), {
+      id: 3,
+      name: 'Telecom',
+      description: "Telecommunications Services",
+      owner: 'sample',
+      instruments: []
+    }));
+    this.watchlists[2].instruments.push(Object.assign(new WatchlistItem(), {
+      instrument: 'T',
+      exchange: 'NYSE',
+      unitsOwned: 300,
+      avgPrice: 40
+    }));
+    this.watchlists[2].instruments.push(Object.assign(new WatchlistItem(), {
+      instrument: 'VZ',
+      exchange: 'NYSE',
+      unitsOwned: 200,
+      avgPrice: 55
+    }));
+    this.watchlists[2].instruments.push(Object.assign(new WatchlistItem(), {
+      instrument: 'VOD',
+      exchange: 'NASDAQ',
+      unitsOwned: 400,
+      avgPrice: 27
+    }));
+
+  }
+
 }

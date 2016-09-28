@@ -18,12 +18,16 @@
 			<div>
 				<label> Price update interval: </label> &nbsp;
 				<select name="timer" #timer [ngModel]="refInterval">
-						<option *ngFor="let f of refFreqs" [value]="f"> {{ f }}</option>
-					</select> &nbsp;
-				<label> seconds </label> &emsp;
+						<option *ngFor="let f of refFreqs" [value]="f[0]"> {{ f[1] }}</option>
+					</select> &nbsp; 
+				&emsp;
 				<button class="btn btn-default btn-xs" [disabled]="refInterval == timer.value"
 						(click)="onChangeTimer(timer.value)">
                       	Change
+                	</button>
+				<button class="btn btn-default btn-xs" [disabled]="refInterval == timer.value"
+						(click)="timer.value = refInterval;">
+                      	Cancel
                 	</button>
 			</div>
 			<hr />

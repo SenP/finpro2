@@ -50,8 +50,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     // All stocks
     allStocks: Map<string, WatchlistItem[]>;
-    stkorderMV: string = 'top';
-    stksizeMV: number = 5;
+    // stkorderMV: string = 'top';
+    // stksizeMV: number = 5;
     stkorderPL: string = 'top';
     stksizePL: number = 5;
     stkorderDC: string = 'top';

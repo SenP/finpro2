@@ -39,17 +39,17 @@
 					<div class="form-group">
 						<label> Units Owned: </label>
 						<input #editUnits type="text" name="unitsOwned" class="form-control input-sm" [(ngModel)]="editedItem.unitsOwned"
-								required> &nbsp;
-					</div>
-					&emsp;
+								required> &emsp;
+					</div>					
 					<div class="form-group">
 						<label> Buy Price: $ </label>
 						<input type="text" name="avgPrice" class="form-control input-sm" [(ngModel)]="editedItem.avgPrice"
-								required>
+								required> &emsp; &nbsp;
+					</div>					
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-sm" [disabled]="!f.valid">Save</button>
+						<button type="button" class="btn btn-danger btn-sm" (click)="resetView()">Cancel</button>
 					</div>
-					&emsp;
-					<button type="submit" class="btn btn-primary btn-sm" [disabled]="!f.valid">Save</button>
-					<button type="button" class="btn btn-danger btn-sm" (click)="resetView()">Cancel</button>
 				</form>
 				<br>
 				<div *ngIf="msg" [class]="msgClass"> {{ msg }}
