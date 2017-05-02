@@ -10,7 +10,7 @@ import { Quote } from './quote.model';
 export class QuoteService {
 
     // Quotes service gets all quotes from Google Finance 
-    private base_url = 'http://finance.google.com/finance/info';
+    private base_url = 'https://finance.google.com/finance/info';
 
     private quoteScheduler: Subscription;
     private quotesMap: Map<string, Quote>;
